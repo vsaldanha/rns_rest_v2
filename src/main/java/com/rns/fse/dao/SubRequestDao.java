@@ -68,9 +68,11 @@ public class SubRequestDao {
 		for(Object[] res : results) {
 			trendingVol = new TrendingVolModel();
 			String x =(String) res[0];
-			BigInteger y = (BigInteger) res[1];
+			String y = (String) res[1];
+			BigInteger t = (BigInteger) res[2];
 			trendingVol.setVolunteerName(x);
-			trendingVol.setTimePeriod(y.intValue());
+			trendingVol.setOrg_name(y);
+			trendingVol.setTimePeriod(t.intValue());
 			trendingVolModel.add(trendingVol);
 		}
 		return trendingVolModel;

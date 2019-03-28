@@ -22,7 +22,7 @@ public class SubRequestServiceImpl implements SubRequestService{
 		List<TrendingVolModel> trendingVolModel = subRequestDao.fetchTrendingVol();
 		for(TrendingVolModel org: trendingVolModel)
 		{
-			System.out.println(org.getVolunteerName()+" : "+org.getTimePeriod());
+			System.out.println(org.getVolunteerName()+" : " +org.getOrg_name()+" : "+org.getTimePeriod());
 		}
 		return trendingVolModel;
 	}
