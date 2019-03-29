@@ -5,7 +5,7 @@ import com.rns.fse.entities.SchoolDetails;
 public class RequestModel {
 	
 	private String id;
-	private String schoolId;
+	private int schoolId;
 	private String eventType;
 	private String eventDate;
 	private String status;
@@ -18,10 +18,10 @@ public class RequestModel {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getSchoolId() {
+	public int getSchoolId() {
 		return schoolId;
 	}
-	public void setSchoolId(String schoolId) {
+	public void setSchoolId(int schoolId) {
 		this.schoolId = schoolId;
 	}
 	public String getEventType() {

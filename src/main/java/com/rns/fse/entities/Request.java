@@ -3,6 +3,8 @@ package com.rns.fse.entities;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -13,11 +15,12 @@ import javax.persistence.Table;
 public class Request {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "request_id")
-	private String id;
+	private int id;
 	
 	@Column(name = "school_id")
-	private String schoolId;
+	private int schoolId;
 	
 	@Column(name = "even_type")
 	private String eventType;
@@ -35,19 +38,16 @@ public class Request {
 	@JoinColumn(name = "school_id", insertable = false, updatable = false)
 	private SchoolDetails schoolDetails;
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
 
-	public String getSchoolId() {
+	public int getSchoolId() {
 		return schoolId;
 	}
 
-	public void setSchoolId(String schoolId) {
+	public void setSchoolId(int schoolId) {
 		this.schoolId = schoolId;
 	}
 

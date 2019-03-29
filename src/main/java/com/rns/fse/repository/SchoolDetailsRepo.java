@@ -12,5 +12,6 @@ public interface SchoolDetailsRepo extends JpaRepository<SchoolDetails,Integer> 
 	
 	List<SchoolDetails> findAll();
 	SchoolDetails findById(int y);
+	SchoolDetails findBySchoolName(String name);
 
 }

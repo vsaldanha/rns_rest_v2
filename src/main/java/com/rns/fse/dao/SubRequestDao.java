@@ -31,7 +31,7 @@ public class SubRequestDao {
 		List<SubRequest> subRequest = subRequestRepo.findAll();
 		for(SubRequest sr : subRequest){
 			subRequestModel = new SubRequestModel();
-			subRequestModel.setId(sr.getId());
+			//subRequestModel.setId(sr.getId());
 			subRequestModel.setRequestId(sr.getRequestId());
 			subRequestModel.setOrganizationName(sr.getOrganizationName());
 			subRequestModel.setStatus(sr.getStatus());

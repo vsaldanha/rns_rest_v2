@@ -38,7 +38,7 @@ public class TrendingOrgRepo {
 	
 	@Transactional 
 	public List<Object[]> findVolunteerNameAndSumTimePeriod() {
-		List<Object[]> results = entityManager.createNativeQuery("select volunteer_name as name,organization_name as org_name, SUM (time_period) as time from rns.sub_request where status = 'Pass' group by volunteer_name,organization_name order by time desc limit 10").getResultList();
+		List<Object[]> results = entityManager.createNativeQuery("select volunteer_name as name,organization_name as org_name, SUM (time_period) as time from rns.sub_request where status = 'Pass' group by volunteer_name,organization_name order by time desc limit 5").getResultList();
 		return results;
 
 	}

@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rns.fse.pojo.CreateRequestModel;
 import com.rns.fse.pojo.OpenRequestsModel;
 import com.rns.fse.pojo.RequestModel;
 import com.rns.fse.pojo.TrendingOrgModel;
@@ -42,6 +44,14 @@ public class RequestController {
 	public List<OpenRequestsModel> getOpenRequests() {
 		List<OpenRequestsModel> requestModel = requestServiceImpl.fetchOpenRequest();
 		return requestModel;
+
+	}
+	
+	@RequestMapping(value = "/createOpenRequests", method = RequestMethod.POST)
+
+	public String createOpenRequests(@RequestBody CreateRequestModel createRequestModel) {
+		String resp = requestServiceImpl.persistRequest(createRequestModel);
+		return resp;
 
 	}
 

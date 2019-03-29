@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.rns.fse.dao.RequestDao;
+import com.rns.fse.pojo.CreateRequestModel;
 import com.rns.fse.pojo.OpenRequestsModel;
 import com.rns.fse.pojo.RequestModel;
 import com.rns.fse.service.intf.RequestService;
@@ -26,6 +27,12 @@ public class RequestServiceImpl implements RequestService{
 	public List<OpenRequestsModel> fetchOpenRequest() {
 		List<OpenRequestsModel> requestModel = requestDao.fetchOpenRequest();
 		return requestModel;
+	}
+	
+	@Override
+	public String persistRequest(CreateRequestModel createRequestModel) {
+		String resp = requestDao.persistRequest(createRequestModel);
+		return resp;
 	}
 
 }

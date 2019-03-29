@@ -2,7 +2,7 @@ package com.rns.fse.pojo;
 
 public class OpenRequestsModel {
 
-    private String schoonName;
+    private String schoolName;
 
     private String address;
 
@@ -12,15 +12,15 @@ public class OpenRequestsModel {
 
    
 
-    public String getSchoonName() {
+    public String getSchoolName() {
 
-                    return schoonName;
+                    return schoolName;
 
     }
 
-    public void setSchoonName(String schoonName) {
+    public void setSchoolName(String schoolName) {
 
-                    this.schoonName = schoonName;
+                    this.schoolName = schoolName;
 
     }
 

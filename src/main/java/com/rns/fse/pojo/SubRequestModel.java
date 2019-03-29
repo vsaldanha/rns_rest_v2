@@ -4,8 +4,8 @@ import com.rns.fse.entities.Request;
 
 public class SubRequestModel {
 
-	private String id;
-	private String requestId;
+	private int id;
+	private int requestId;
 	private String classGrade;
 	private String Subject;
 	private String timePeriod;
@@ -14,16 +14,13 @@ public class SubRequestModel {
 	private String status;
 	private Request request;
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getRequestId() {
+	public int getRequestId() {
 		return requestId;
 	}
-	public void setRequestId(String requestId) {
+	public void setRequestId(int requestId) {
 		this.requestId = requestId;
 	}
 	public String getClassGrade() {
