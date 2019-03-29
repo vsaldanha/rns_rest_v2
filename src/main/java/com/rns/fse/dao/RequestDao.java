@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rns.fse.entities.Request;
 import com.rns.fse.entities.SchoolDetails;
@@ -38,6 +39,7 @@ public class RequestDao {
 	@Autowired
 	private PersistRequestRepository persistRequestRepository;
 
+	@Transactional
 	public List<RequestModel> fetchAllRequest() {
 
 		List<RequestModel> requestData = new ArrayList<RequestModel>();
@@ -57,6 +59,7 @@ public class RequestDao {
 
 	}
 
+	@Transactional
 	public List<OpenRequestsModel> fetchOpenRequest() {
 		SchoolDetails schoolDetails = null;
 		OpenRequestsModel openRequest = null;
@@ -79,6 +82,7 @@ public class RequestDao {
 		return requestModel;
 	}
 
+	@Transactional
 	public String persistRequest(CreateRequestModel requestModel){
 		Request request = new Request();
 		String resp = "success";

@@ -15,14 +15,14 @@ import javax.persistence.Table;
 public class Request {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "request_id")
 	private int id;
 	
 	@Column(name = "school_id")
 	private int schoolId;
 	
-	@Column(name = "even_type")
+	@Column(name = "event_type")
 	private String eventType;
 	
 	@Column(name = "event_date")

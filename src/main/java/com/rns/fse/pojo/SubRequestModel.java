@@ -8,7 +8,7 @@ public class SubRequestModel {
 	private int requestId;
 	private String classGrade;
 	private String Subject;
-	private String timePeriod;
+	private int timePeriod;
 	private String volunteerName;
 	private String OrganizationName;
 	private String status;
@@ -35,10 +35,10 @@ public class SubRequestModel {
 	public void setSubject(String subject) {
 		Subject = subject;
 	}
-	public String getTimePeriod() {
+	public int getTimePeriod() {
 		return timePeriod;
 	}
-	public void setTimePeriod(String timePeriod) {
+	public void setTimePeriod(int timePeriod) {
 		this.timePeriod = timePeriod;
 	}
 	public String getVolunteerName() {

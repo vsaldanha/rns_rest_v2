@@ -4,10 +4,13 @@ public class CreateRequestModel {
 	private String schoolName;
 	private String eventType;
 	private String eventDate;
+	public CreateRequestModel() {
+		super();
+	}
 	private String eventstatus;
 	private String classGrade;
 	private String Subject;
-	private String timePeriod;
+	private int timePeriod;
 	
 	public String getEventType() {
 		return eventType;
@@ -39,10 +42,10 @@ public class CreateRequestModel {
 	public void setSubject(String subject) {
 		Subject = subject;
 	}
-	public String getTimePeriod() {
+	public int getTimePeriod() {
 		return timePeriod;
 	}
-	public void setTimePeriod(String timePeriod) {
+	public void setTimePeriod(int timePeriod) {
 		this.timePeriod = timePeriod;
 	}
 	public String getSchoolName() {

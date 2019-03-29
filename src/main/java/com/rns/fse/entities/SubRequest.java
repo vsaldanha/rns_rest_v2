@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class SubRequest {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "sub_request_id")
 	private int id;
 
@@ -29,7 +29,7 @@ public class SubRequest {
 	private String Subject;
 
 	@Column(name = "time_period")
-	private String timePeriod;
+	private int timePeriod;
 
 	@Column(name = "volunteer_name")
 	private String volunteerName;
@@ -72,11 +72,11 @@ public class SubRequest {
 		Subject = subject;
 	}
 
-	public String getTimePeriod() {
+	public int getTimePeriod() {
 		return timePeriod;
 	}
 
-	public void setTimePeriod(String timePeriod) {
+	public void setTimePeriod(int timePeriod) {
 		this.timePeriod = timePeriod;
 	}
 
