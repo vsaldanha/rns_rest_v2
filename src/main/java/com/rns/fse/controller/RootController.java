@@ -23,6 +23,7 @@ import com.rns.fse.service.impl.OrganizationServiceImpl;
 import com.rns.fse.service.impl.RequestServiceImpl;
 import com.rns.fse.service.impl.SchoolServiceImpl;
 import com.rns.fse.service.impl.SubRequestServiceImpl;
+import com.rns.fse.service.impl.UserInfoServiceImpl;
 
 import static com.rns.fse.constant.Parameter.FILTER_BY;
 
@@ -44,6 +45,9 @@ public class RootController {
 	
 	@Autowired
 	private EmployeeServiceImpl employeeService;
+	
+	@Autowired
+	private UserInfoServiceImpl userInfoService;
 	
 	@RequestMapping(value="/getAllSchoolDetails",method=RequestMethod.GET)
 	public List<SchoolDetailsModel> getSchoolDetails() {
@@ -76,5 +80,12 @@ public class RootController {
 		return employeeModel;		
 	}
  
+	
+	@RequestMapping(value="/getUserInfo",method=RequestMethod.GET)
+	public String getUserInfo(@RequestParam("param1") String userName,@RequestParam("param2") String password) {
+		System.out.println("Inside the method");
+		String role = userInfoService.fetchUserData(userName,password);
+		return role;		
+	}
 
 }
