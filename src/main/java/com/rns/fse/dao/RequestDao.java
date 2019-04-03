@@ -1,6 +1,5 @@
 package com.rns.fse.dao;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import com.rns.fse.entities.SubRequest;
 import com.rns.fse.pojo.CreateRequestModel;
 import com.rns.fse.pojo.OpenRequestsModel;
 import com.rns.fse.pojo.RequestModel;
-import com.rns.fse.pojo.TrendingVolModel;
+import com.rns.fse.pojo.SubRequestResponse;
 import com.rns.fse.repository.OpenRequestsRepo;
 import com.rns.fse.repository.PersistRequestRepository;
 import com.rns.fse.repository.RequestRepo;
@@ -38,6 +37,8 @@ public class RequestDao {
 	
 	@Autowired
 	private PersistRequestRepository persistRequestRepository;
+	
+	private SubRequestResponse subReqResponse;
 
 	@Transactional
 	public List<RequestModel> fetchAllRequest() {
@@ -102,4 +103,25 @@ public class RequestDao {
 		return resp;
 			
 	}
+	
+	@Transactional
+	public List<SubRequestResponse> fetchAllSubRequest() {
+		
+		List<SubRequestResponse> subReqList= new ArrayList<SubRequestResponse>();
+		List<Object[]> results = openRequestRepo.fetchAllRequest();
+		for (Object[] res : results) {
+			
+			subReqResponse = new SubRequestResponse();
+			
+			subReqResponse.setEventType((String) res[0]);
+			subReqResponse.setEventDate((String) res[1]);
+			subReqResponse.setClassGrade((String) res[2]);
+			subReqResponse.setSubject((String) res[3]);
+			subReqResponse.setTimePeriod((Integer) res[4]);
+			subReqResponse.setStatus((String) res[5]);
+			subReqList.add(subReqResponse);
+		}
+		return subReqList;
+	}
+
 }

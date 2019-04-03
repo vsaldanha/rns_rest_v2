@@ -9,6 +9,7 @@ import com.rns.fse.dao.RequestDao;
 import com.rns.fse.pojo.CreateRequestModel;
 import com.rns.fse.pojo.OpenRequestsModel;
 import com.rns.fse.pojo.RequestModel;
+import com.rns.fse.pojo.SubRequestResponse;
 import com.rns.fse.service.intf.RequestService;
 
 @Component
@@ -26,6 +27,12 @@ public class RequestServiceImpl implements RequestService{
 	@Override
 	public List<OpenRequestsModel> fetchOpenRequest() {
 		List<OpenRequestsModel> requestModel = requestDao.fetchOpenRequest();
+		return requestModel;
+	}
+	
+	@Override
+	public List<SubRequestResponse> fetchAllSubRequest() {
+		List<SubRequestResponse> requestModel = requestDao.fetchAllSubRequest();
 		return requestModel;
 	}
 	

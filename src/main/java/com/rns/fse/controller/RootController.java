@@ -62,12 +62,6 @@ public class RootController {
 		return requestModel;		
 	}
 	
-	@RequestMapping(value="/getAllSubRequestDetails",method=RequestMethod.GET)
-	public List<SubRequestModel> getSubRequestDetails() {
-		List<SubRequestModel> subRequestModel = subRequestService.fetchAllSubRequestService();
-		return subRequestModel;		
-	}
-	
 	@RequestMapping(value="/getAllOrganizationDetails",method=RequestMethod.GET)
 	public List<OrganizationDetailsModel> getOrgzanitaionDetails() {
 		List<OrganizationDetailsModel> organizationModel = organizationService.fetchAllOrganizationService();
