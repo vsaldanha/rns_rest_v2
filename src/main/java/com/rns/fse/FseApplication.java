@@ -1,4 +1,4 @@
-package com.rns.fse;
+ package com.rns.fse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

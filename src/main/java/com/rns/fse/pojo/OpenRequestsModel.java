@@ -9,6 +9,10 @@ public class OpenRequestsModel {
     private String eventType;
 
     private String eventDate;
+    
+    private String classes;
+    
+    private String status;
 
    
 
@@ -59,6 +63,22 @@ public class OpenRequestsModel {
                     this.eventDate = eventDate;
 
     }
+
+	public String getClasses() {
+		return classes;
+	}
+
+	public void setClasses(String classes) {
+		this.classes = classes;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 
 }

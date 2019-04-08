@@ -37,6 +37,12 @@ public class RequestServiceImpl implements RequestService{
 	}
 	
 	@Override
+	public List<SubRequestResponse> fetchAllOpenSubRequest() {
+		List<SubRequestResponse> requestModel = requestDao.fetchAllOpenSubRequest();
+		return requestModel;
+	}
+	
+	@Override
 	public String persistRequest(CreateRequestModel createRequestModel) {
 		String resp = requestDao.persistRequest(createRequestModel);
 		return resp;

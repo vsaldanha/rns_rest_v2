@@ -2,6 +2,7 @@ package com.rns.fse.pojo;
 
 public class SubRequestResponse {
 	
+	public String schoolName;
 	public String eventType;
 	public String eventDate;
 	public String classGrade;
@@ -44,6 +45,12 @@ public class SubRequestResponse {
 	}
 	public void setTimePeriod(int timePeriod) {
 		this.timePeriod = timePeriod;
+	}
+	public String getSchoolName() {
+		return schoolName;
+	}
+	public void setSchoolName(String schoolName) {
+		this.schoolName = schoolName;
 	}
 	
 }

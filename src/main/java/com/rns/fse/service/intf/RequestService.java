@@ -14,6 +14,8 @@ public interface RequestService {
 	public List<OpenRequestsModel> fetchOpenRequest();
 	
 	public List<SubRequestResponse> fetchAllSubRequest();
+	
+	public List<SubRequestResponse> fetchAllOpenSubRequest();
 
 	String persistRequest(CreateRequestModel createRequestModel);
 }

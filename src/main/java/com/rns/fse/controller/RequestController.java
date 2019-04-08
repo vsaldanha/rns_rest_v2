@@ -59,5 +59,12 @@ public class RequestController {
 		return resp;
 
 	}
+	
+	@RequestMapping(value = "/FetchAllOpenSubRequests", method = RequestMethod.GET)
+	public List<SubRequestResponse> getAllOpenRequestDetails() {
+		List<SubRequestResponse> requestModel = requestServiceImpl.fetchAllOpenSubRequest();
+		return requestModel;
+
+	}
 
 }
