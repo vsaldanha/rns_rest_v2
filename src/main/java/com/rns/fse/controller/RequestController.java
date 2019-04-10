@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rns.fse.pojo.ConfirmSubRequest;
 import com.rns.fse.pojo.CreateRequestModel;
 import com.rns.fse.pojo.OpenRequestsModel;
 import com.rns.fse.pojo.SubRequestResponse;
@@ -26,6 +27,9 @@ public class RequestController {
 
 	@Autowired
 	private RequestServiceImpl requestServiceImpl;
+	
+	@Autowired
+	private SubRequestServiceImpl subRequestServiceImpl;
 
 	@RequestMapping(value = "/getTrendingOrg", method = RequestMethod.GET)
 	public List<TrendingOrgModel> getSubRequestDetails() {
@@ -46,6 +50,14 @@ public class RequestController {
 
 	}
 	
+//	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
+//	public List<OpenRequestsModel> registerUser() {
+//		List<OpenRequestsModel> requestModel = requestServiceImpl.fetchOpenRequest();
+//		return requestModel;
+//
+//	}
+	
+	
 	@RequestMapping(value = "/getAllSubRequestDetails", method = RequestMethod.GET)
 	public List<SubRequestResponse> getAllSubRequestDetails() {
 		List<SubRequestResponse> requestModel = requestServiceImpl.fetchAllSubRequest();
@@ -56,6 +68,13 @@ public class RequestController {
 	@RequestMapping(value = "/createOpenRequests", method = RequestMethod.POST)
 	public String createOpenRequests(@RequestBody CreateRequestModel createRequestModel) {
 		String resp = requestServiceImpl.persistRequest(createRequestModel);
+		return resp;
+
+	}
+	
+	@RequestMapping(value = "/saveRequests", method = RequestMethod.POST)
+	public String saveSubRequest(@RequestBody ConfirmSubRequest confirmSubRequestModel) {
+		String resp = subRequestServiceImpl.persistSubRequest(confirmSubRequestModel);
 		return resp;
 
 	}

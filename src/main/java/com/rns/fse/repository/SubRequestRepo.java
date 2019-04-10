@@ -13,6 +13,6 @@ public interface SubRequestRepo extends JpaRepository<SubRequest,Integer> {
 
 	List<SubRequest> findAll();
 	List<SubRequest> findByRequestId(int y);
-	
+	SubRequest findById(int id);
 	
 }

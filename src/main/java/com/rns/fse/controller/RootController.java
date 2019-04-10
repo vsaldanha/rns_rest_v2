@@ -7,14 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rns.fse.pojo.ApiResponse;
+import com.rns.fse.pojo.CreateRequestModel;
 import com.rns.fse.pojo.EmployeeDetailsModel;
 import com.rns.fse.pojo.OrganizationDetailsModel;
+import com.rns.fse.pojo.RegisterUser;
 import com.rns.fse.pojo.RequestModel;
 import com.rns.fse.pojo.SchoolDetailsModel;
 import com.rns.fse.pojo.SubRequestModel;
@@ -80,6 +83,13 @@ public class RootController {
 		System.out.println("Inside the method");
 		String role = userInfoService.fetchUserData(userName,password);
 		return role;		
+	}
+	
+	@RequestMapping(value = "/registerUser", method = RequestMethod.POST)
+	public String registerUserDetails(@RequestBody RegisterUser registerUser) {
+		String resp = userInfoService.registerUserData(registerUser);
+		return resp;
+
 	}
 
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.rns.fse.dao.SubRequestDao;
+import com.rns.fse.pojo.ConfirmSubRequest;
+import com.rns.fse.pojo.CreateRequestModel;
 import com.rns.fse.pojo.SubRequestModel;
 import com.rns.fse.pojo.TrendingOrgModel;
 import com.rns.fse.pojo.TrendingVolModel;
@@ -40,6 +42,12 @@ public class SubRequestServiceImpl implements SubRequestService{
 	public List<SubRequestModel> fetchAllSubRequestService() {
 		List<SubRequestModel> subRequestModel = subRequestDao.fetchAllSubRequest();
 		return subRequestModel;
+	}
+	
+	@Override
+	public String persistSubRequest(ConfirmSubRequest confirmSubRequestModel) {
+		String resp = subRequestDao.persistSubRequest(confirmSubRequestModel);
+		return resp;
 	}
 
 	

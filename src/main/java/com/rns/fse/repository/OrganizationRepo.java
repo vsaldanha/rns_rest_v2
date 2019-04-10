@@ -10,4 +10,5 @@ import com.rns.fse.entities.OrganizationDetails;
 public interface OrganizationRepo extends JpaRepository<OrganizationDetails,Integer> {
 
 	List<OrganizationDetails> findAll();
+	OrganizationDetails findByOrganizationName(String name);
 }

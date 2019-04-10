@@ -28,5 +28,10 @@ public class UserInfoRepo {
         Object role = query.getSingleResult();
 		return role;
 	}
+	
+	@Transactional
+	public void registerUser(UserInfo userInfo){
+		entityManager.persist(userInfo);
+	}
 
 }

@@ -162,6 +162,7 @@ public class RequestDao {
 			subReqResponse.setSubject((String) res[4]);
 			subReqResponse.setTimePeriod((Integer) res[5]);
 			subReqResponse.setStatus((String) res[6]);
+			subReqResponse.setSub_req_id((Integer) res[7]);
 			subReqList.add(subReqResponse);
 		}
 		return subReqList;

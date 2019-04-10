@@ -30,7 +30,7 @@ public class OpenRequestsRepo {
 	
 	@Transactional 
 	public List<Object[]> fetchAllOpenSubRequest() {
-		List<Object[]> results = entityManager.createNativeQuery("select req.school_id,req.event_type, req.event_date, sreq.class_grade, sreq.subject, sreq.time_period, sreq.status from rns.request req, rns.sub_request sreq where req.request_id=sreq.request_id and sreq.status='Open'").getResultList();
+		List<Object[]> results = entityManager.createNativeQuery("select req.school_id,req.event_type, req.event_date, sreq.class_grade, sreq.subject, sreq.time_period, sreq.status,sreq.sub_request_id from rns.request req, rns.sub_request sreq where req.request_id=sreq.request_id and sreq.status='Open'").getResultList();
 		return results;
 
 	}

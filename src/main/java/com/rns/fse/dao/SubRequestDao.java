@@ -9,9 +9,11 @@ import org.springframework.stereotype.Component;
 
 import com.rns.fse.entities.Request;
 import com.rns.fse.entities.SubRequest;
+import com.rns.fse.pojo.ConfirmSubRequest;
 import com.rns.fse.pojo.SubRequestModel;
 import com.rns.fse.pojo.TrendingOrgModel;
 import com.rns.fse.pojo.TrendingVolModel;
+import com.rns.fse.repository.SaveSubRequestRepo;
 import com.rns.fse.repository.SubRequestRepo;
 import com.rns.fse.repository.TrendingOrgRepo;
 
@@ -23,6 +25,9 @@ public class SubRequestDao {
 	
 	@Autowired 
 	private	TrendingOrgRepo trendingOrgRepo;
+	
+	@Autowired
+	private SaveSubRequestRepo saveSubRequestRepo;
 	
 	public List<SubRequestModel> fetchAllSubRequest(){
 		
@@ -76,5 +81,16 @@ public class SubRequestDao {
 			trendingVolModel.add(trendingVol);
 		}
 		return trendingVolModel;
+	}
+	
+	public String persistSubRequest(ConfirmSubRequest confirmSubRequestModel)
+	{
+		SubRequest subRequest = new SubRequest();
+		subRequest = subRequestRepo.findById(Integer.parseInt(confirmSubRequestModel.getSubReqId()));		
+		subRequest.setOrganizationName(confirmSubRequestModel.getOrgName());
+		subRequest.setVolunteerName(confirmSubRequestModel.getVolunteer());
+		subRequest.setStatus(confirmSubRequestModel.getStatus());
+		saveSubRequestRepo.saveSubRequest(subRequest);
+		return "sucess";
 	}
 }

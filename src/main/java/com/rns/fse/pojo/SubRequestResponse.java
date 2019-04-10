@@ -9,6 +9,7 @@ public class SubRequestResponse {
 	public String subject;
 	public int timePeriod;
 	public String status;
+	public int sub_req_id;
 	
 	public String getStatus() {
 		return status;
@@ -51,6 +52,12 @@ public class SubRequestResponse {
 	}
 	public void setSchoolName(String schoolName) {
 		this.schoolName = schoolName;
+	}
+	public int getSub_req_id() {
+		return sub_req_id;
+	}
+	public void setSub_req_id(int sub_req_id) {
+		this.sub_req_id = sub_req_id;
 	}
 	
 }
