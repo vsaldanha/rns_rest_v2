@@ -14,17 +14,15 @@ public class EmployeeDetails {
 	
 	@Id
 	@Column(name = "employee_id")
-	private String id;
+	private int id;
 	
 	@Column(name = "organization_id")
-	private String organizationId;
+	private int organizationId;
 	
 	@Column(name = "employee_name")
 	private String employeeName;
 	
-	@Column(name = "address")
-	private String address;
-	
+
 	@Column(name = "email")
 	private String email;
 
@@ -35,19 +33,19 @@ public class EmployeeDetails {
 	@JoinColumn(name = "organization_id", insertable = false, updatable = false)
 	private OrganizationDetails organizationDetails;
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public String getOrganizationId() {
+	public int getOrganizationId() {
 		return organizationId;
 	}
 
-	public void setOrganizationId(String organizationId) {
+	public void setOrganizationId(int organizationId) {
 		this.organizationId = organizationId;
 	}
 
@@ -59,13 +57,7 @@ public class EmployeeDetails {
 		this.employeeName = employeeName;
 	}
 
-	public String getAddress() {
-		return address;
-	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
 
 	public String getEmail() {
 		return email;

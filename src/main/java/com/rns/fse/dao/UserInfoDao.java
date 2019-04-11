@@ -42,6 +42,7 @@ public class UserInfoDao {
 		}
 		else
 			userInfo.setUserRole("volunteer");
+			userInfo.setId(Integer.parseInt((registerUser.getEmpId())));
 			userInfo.setUserName(registerUser.getUsername());
 			userInfo.setPassword(registerUser.getPassword());
 			userInfo.setEmail(registerUser.getPassword());
@@ -49,10 +50,10 @@ public class UserInfoDao {
 			if(userInfo.getUserRole().equalsIgnoreCase("volunteer")){
 			employee.setEmployeeName(registerUser.getUsername());
 			org = organizationRepo.findByOrganizationName(registerUser.getOrgName());
-			employee.setOrganizationId(org.getId());
+			employee.setOrganizationId(Integer.parseInt(org.getId()));
 			employee.setEmail(registerUser.getEmail());
 			employee.setPhNumber(registerUser.getPhone());
-			employee.setId(registerUser.getEmpId());
+			employee.setId(Integer.parseInt(registerUser.getEmpId()));
 			registerEmp.registerEmp(employee);
 		
 			}
