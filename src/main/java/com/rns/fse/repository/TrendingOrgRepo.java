@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.boot.web.servlet.server.Session;
+//import org.springframework.boot.web.servlet.server.Session;
 //import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

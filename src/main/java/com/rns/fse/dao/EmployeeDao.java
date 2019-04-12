@@ -25,7 +25,7 @@ public class EmployeeDao {
 			employeeModel.setId(emp.getId());
 			employeeModel.setEmployeeName(emp.getEmployeeName());
 			employeeModel.setOrganizationId(emp.getOrganizationId());
-			employeeModel.setAddress(emp.getAddress());
+			//employeeModel.setAddress(emp.getAddress());
 			employeeModel.setEmail(emp.getEmail());
 			employeeModel.setPhNumber(emp.getPhNumber());
 			employeeData.add(employeeModel);		
