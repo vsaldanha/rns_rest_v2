@@ -37,9 +37,9 @@ public class RootControllerTest {
 	@Test
 	public void testGetSchoolDetails() {
 		
-		String fetchProductsUrl = new StringBuilder().append("/").append("getAllSchoolDetails").toString();
+		String fetchSchoolUrl = new StringBuilder().append("/").append("getAllSchoolDetails").toString();
 		try {
-			mockMvc.perform(get(fetchProductsUrl))
+			mockMvc.perform(get(fetchSchoolUrl))
 			.andExpect(status().isOk())
 			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
 			.andDo(print())
@@ -52,22 +52,49 @@ public class RootControllerTest {
 
 	@Test
 	public void testGetRequestDetails() {
-		fail("Not yet implemented");
+		String fetchRequestUrl = new StringBuilder().append("/").append("getAllRequestDetails").toString();
+		try {
+			mockMvc.perform(get(fetchRequestUrl))
+			.andExpect(status().isOk())
+			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+			.andDo(print())
+			.andReturn();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	public void testGetOrgzanitaionDetails() {
-		fail("Not yet implemented");
+		String fetchOrganizationUrl = new StringBuilder().append("/").append("getAllOrganizationDetails").toString();
+		try {
+			mockMvc.perform(get(fetchOrganizationUrl))
+			.andExpect(status().isOk())
+			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+			.andDo(print())
+			.andReturn();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	public void testGetEmployeeDetails() {
-		fail("Not yet implemented");
+		String fetchEmployeeUrl = new StringBuilder().append("/").append("getAllEmployeeDetails").toString();
+		try {
+			mockMvc.perform(get(fetchEmployeeUrl))
+			.andExpect(status().isOk())
+			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+			.andDo(print())
+			.andReturn();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	@Test
-	public void testGetUserInfo() {
-		fail("Not yet implemented");
-	}
+
 
 }
